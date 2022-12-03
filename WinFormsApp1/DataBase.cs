@@ -9,6 +9,7 @@ namespace WinFormsApp1
 {
      class DataBase
     {   
+
         SqlConnection sqlConnection = new SqlConnection(@"Data Source=ROLLYOFC;Initial Catalog=Mail;Integrated Security=true");
 
         public void openConnection()
