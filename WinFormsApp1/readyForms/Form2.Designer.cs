@@ -160,6 +160,7 @@
             this.userNameButton.Name = "userNameButton";
             this.userNameButton.Size = new System.Drawing.Size(90, 34);
             this.userNameButton.Text = "Name";
+            this.userNameButton.Click += new System.EventHandler(this.userNameButton_Click);
             // 
             // toolStripTextBox1
             // 
@@ -172,19 +173,19 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(215, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(312, 6);
             // 
             // профильToolStripMenuItem
             // 
             this.профильToolStripMenuItem.Name = "профильToolStripMenuItem";
-            this.профильToolStripMenuItem.Size = new System.Drawing.Size(218, 40);
+            this.профильToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.профильToolStripMenuItem.Text = "Профиль";
             this.профильToolStripMenuItem.Click += new System.EventHandler(this.профильToolStripMenuItem_Click);
             // 
             // выйтиToolStripMenuItem
             // 
             this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
-            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(218, 40);
+            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.выйтиToolStripMenuItem.Text = "Выйти";
             this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.выйтиToolStripMenuItem_Click);
             // 
@@ -207,7 +208,7 @@
             this.сотрудникиToolStripMenuItem,
             this.клиентыToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(315, 40);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(255, 40);
             this.toolStripMenuItem1.Text = "Активация";
             // 
             // сотрудникиToolStripMenuItem
@@ -229,7 +230,7 @@
             this.добавлениеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.админаToolStripMenuItem});
             this.добавлениеToolStripMenuItem.Name = "добавлениеToolStripMenuItem";
-            this.добавлениеToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.добавлениеToolStripMenuItem.Size = new System.Drawing.Size(255, 40);
             this.добавлениеToolStripMenuItem.Text = "Добавление ";
             // 
             // админаToolStripMenuItem

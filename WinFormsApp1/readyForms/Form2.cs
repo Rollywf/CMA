@@ -31,11 +31,11 @@ namespace WinFormsApp1
         DataGridView dgv = new DataGridView();
         public Form2(string qs)
         {
+            username = qs;
             InitializeComponent();
             this.TablesAll.SelectedTab = TablesAll.TabPages[0];
             StartPosition = FormStartPosition.CenterScreen;
             UserName.Text = qs;
-            username = qs;
             dgv.Parent = this.TablesAll.TabPages[0];
             dgv.Visible = true;
             dgv.Name = "dgv";
@@ -44,15 +44,6 @@ namespace WinFormsApp1
             dgv.CellContentClick += dgv_CellContentClick;
             dgv.CellClick += dgv_CellClick;
             this.TablesAll.SelectedTab= TablesAll.TabPages[0];
-            //SqlDataAdapter dac = new SqlDataAdapter();
-            //DataTable dt = new DataTable();
-            //SqlCommand command = new SqlCommand("SELECT ID_Client, FIO,UserName,Description FROM fio_username where UserName=@uL", dataBase.getConnection());
-            //command.Parameters.Add("@uL", SqlDbType.NVarChar).Value = qs;
-            //dac.SelectCommand = command;
-            //dac.Fill(dt);
-            //userNameButton.Text = dt.Rows[0].ItemArray[1].ToString();
-            //username_ = dt.Rows[0].ItemArray[2].ToString();
-            //toolStripTextBox1.Text = dt.Rows[0].ItemArray[3].ToString();
             LoadTable();
         }
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -300,7 +291,6 @@ namespace WinFormsApp1
             userNameButton.Text = dtuser.Rows[0].ItemArray[1].ToString();
             username_ = dtuser.Rows[0].ItemArray[2].ToString();
             toolStripTextBox1.Text = dtuser.Rows[0].ItemArray[3].ToString();
-            //toolStripDropDownButton1.Visible = true;
             SqlDataAdapter dacl = new SqlDataAdapter();
             DataTable dtclient = new DataTable();
             SqlCommand command1 = new SqlCommand("SELECT Count(*) as 'count' FROM clientsP where Логин = @uL", dataBase.getConnection());
@@ -673,7 +663,8 @@ namespace WinFormsApp1
                     FilterBox.SelectedIndex = 0;
                 }
             }
-            else if (checkBox1.Checked == false) { textBox1.PlaceholderText = "Поиск по всем ячейкам"; FilterBox.Items.Clear(); FilterBox.SelectedIndex = -1;FilterBox.Text = ""; }
+            else if (checkBox1.Checked == false) { textBox1.PlaceholderText = "Поиск по всем ячейкам"; 
+                FilterBox.Items.Clear(); FilterBox.SelectedIndex = -1;FilterBox.Text = ""; }
         }
         private void checkBox1_Click(object sender, EventArgs e)
         {
@@ -704,6 +695,11 @@ namespace WinFormsApp1
             IDU_StuffForm f = new IDU_StuffForm(TablesAll.SelectedTab.Name, username_, typeofoperation);
             f.x = id;
             f.ShowDialog();
+        }
+
+        private void userNameButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

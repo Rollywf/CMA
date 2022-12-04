@@ -10,27 +10,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinFormsApp1
-{
-    
+{   
     public partial class Auth : Form
     {
         DataBase dataBase = new DataBase();
         public Auth()
         {
-            InitializeComponent();
-            StartPosition=FormStartPosition.CenterScreen;
+            InitializeComponent();StartPosition=FormStartPosition.CenterScreen;
         }
         private void Auth_Load(object sender, EventArgs e)
         {
-
         }
         private void loginButton_Click(object sender, EventArgs e)
         {
-            
             String Login = textBox1.Text;
             String Password = textBox2.Text;
-
-            
             SqlDataAdapter da = new SqlDataAdapter();
             DataTable dt = new DataTable();
             SqlCommand command = new SqlCommand("SELECT * FROM Users WHERE UserName =@uL AND Password =@uP and Active='Y'", dataBase.getConnection());
@@ -65,10 +59,7 @@ namespace WinFormsApp1
                 {
                     textBox2.Text = "";
                     MessageBox.Show("Неверный Логин и/или Пароль. Попробуйте Снова!");
-                }
-
-
-                   
+                }  
             }
         }
     }
